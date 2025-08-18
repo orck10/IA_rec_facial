@@ -91,7 +91,7 @@ def capture_images(output_dir, person_name, num_images=100):
     print(f"Captured {count} images for {person_name}.")
 
 # Função principal de treinamento
-def train_face_recognition(root_dir, num_epochs=10, batch_size=32, learning_rate=0.001):
+def train_face_recognition(root_dir, num_epochs=10, batch_size=32, learning_rate=0.00001):
     # Transforms
     transform = transforms.Compose([
         transforms.Resize(224),
@@ -155,9 +155,9 @@ if __name__ == "__main__":
     nome = input("Digite seu nome: ")
 
     # Step 1: Capture images for each person
-    capture_images(dataset_dir, nome, num_images=50)
+    capture_images(dataset_dir, nome, num_images=100)
     
     # Step 2: Train the model
-    train_face_recognition(dataset_dir, num_epochs=10)
+    train_face_recognition(dataset_dir, num_epochs=20)
 
     print("Treinamento finalizado!")

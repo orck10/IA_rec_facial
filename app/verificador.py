@@ -111,7 +111,7 @@ def real_time_face_recognition(model_path, root_dir, ser):
                 confidence_score = confidence.item() * 100
                  
                 # Exibir somente se a confiança estiver acima de um limite (por exemplo, 70%)
-                if confidence_score > 70:
+                if confidence_score > 70 and predicted_class != "Unknown":
                     label = f"{predicted_class} ({confidence_score:.1f}%)"
                     if(memory == 'r'):
                         commit_status(b"q",ser)
