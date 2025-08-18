@@ -111,6 +111,8 @@ def train_face_recognition(root_dir, num_epochs=10, batch_size=32, learning_rate
     model.fc = nn.Linear(model.fc.in_features, num_classes)
     
     # Device
+    if torch.cuda.is_available():
+        print("-----------------segura pião-----------------")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     
