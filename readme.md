@@ -4,7 +4,7 @@
 `` Necessario a criação de um dataset chamado Unknown com fotos de rostos desconhecidos para incremento da precisão``
 
 
-**Link_para_esplicaçã_de_modelos_pré-treinados**
+**Link_para_esplicação_de_modelos_pré-treinados:** 
 https://spotintelligence.com/2023/10/13/pre-trained-models/#BERT_Pre-Trained_Model
 
 
