@@ -89,6 +89,10 @@ def capture_images(output_dir, person_name, num_images=100):
     cap.release()
     cv2.destroyAllWindows()
     print(f"Captured {count} images for {person_name}.")
+    print(f"Deseja capturar mais imagens de {person_name}")
+    again =  input("S para sim e outro para não: ")
+    if(again == "S") :
+        capture_images(output_dir, person_name, num_images=100)
 
 # Função principal de treinamento
 def train_face_recognition(root_dir, num_epochs=10, batch_size=32, learning_rate=0.00001):
@@ -153,12 +157,16 @@ def train_face_recognition(root_dir, num_epochs=10, batch_size=32, learning_rate
 if __name__ == "__main__":
     dataset_dir = "face_dataset"
     
-    print("Digite o nome do usuario!")
+    print("Digite o nome do usuario ou u para Unknown!")
     nome = input("Digite seu nome: ")
 
+    if(nome == "u" or nome == "U"):
+        nome = "Unknown"
+
+    print("----Captura Imagem----")
     # Step 1: Capture images for each person
     capture_images(dataset_dir, nome, num_images=100)
-    
+    print("----Treino----")
     # Step 2: Train the model
     train_face_recognition(dataset_dir, num_epochs=20)
 
