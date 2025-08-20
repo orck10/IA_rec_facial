@@ -8,3 +8,6 @@
 https://spotintelligence.com/2023/10/13/pre-trained-models/#BERT_Pre-Trained_Model
 
 
+## Ajuste libs
+### No Arquivo requirements.txt as depentencias "torch==2.5.1+cu121" e "torchvision==0.20.1+cu121" devem ser ajustadas de acordo com a placa de video. 
+
